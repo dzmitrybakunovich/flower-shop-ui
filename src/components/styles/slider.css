@@ -1,0 +1,39 @@
+.slider-item-first{
+    background-color: #e8dddd;
+}
+
+.slider-item-second{
+    background-color: #f4f4f2;
+}
+
+.slider-item-third{
+    background-color: #f1f9e8;
+}
+
+.slider-item-text_title{
+    text-align: left;
+    width: 700px;
+    z-index: 100;
+    position: absolute;
+    flex: content;
+    justify-content: left;
+    top:50px;
+    left: 550px;
+    font-size: 60px;
+    font-family: "Trebuchet MS", sans-serif;
+    color: #89ad6c;
+}
+
+.slider-item-text_subtitle{
+    text-align: left;
+    width: 700px;
+    z-index: 100;
+    position: absolute;
+    flex: content;
+    justify-content: left;
+    top:170px;
+    left:550px;
+    font-size: 18px;
+    font-family: 'Roboto', sans-serif;
+    color: #5f5354;
+}

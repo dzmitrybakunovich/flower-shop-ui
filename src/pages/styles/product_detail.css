@@ -1,0 +1,51 @@
+.container-product{
+    width: 100%;
+}
+
+.container-product-wrapper{
+    padding: 50px;
+    display: flex;
+}
+
+.container-product-img{
+    flex: 1;
+}
+
+.product-img{
+    height: 90%;
+    width: auto;
+    object-fit: cover;
+}
+
+.container-info{
+    flex: 1;
+    padding: 0px 50px;
+}
+
+.title{
+    font-weight: 200;
+}
+
+.description{
+    margin: 20px 0px;
+}
+
+.price{
+    font-weight: 100;
+    font-size: 40px;
+}
+
+.contact{
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.button{
+    padding: 15px;
+    background-color: #e1506b;
+    color: white;
+    cursor: pointer;
+    font-weight: 500;
+}

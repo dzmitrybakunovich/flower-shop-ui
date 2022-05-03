@@ -1,0 +1,49 @@
+.register-container{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.container-wrapper{
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+    padding: 20px;
+    background-color: white;
+    text-align: center;
+}
+
+.title{
+    font-size: 24px;
+    font-weight: 300;
+    width: 100%;
+}
+
+.form{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.form-input{
+    flex: 1;
+    min-width: 40%;
+    margin: 20px 10px 0px 0px;
+    padding: 10px;
+}
+
+.form-button{
+    width: 40%;
+    border: none;
+    padding: 15px 20px;
+    background-color: #e1506b;
+    color: white;
+    cursor: pointer;
+}
+
+.form-agreement{
+    font-size: 12px;
+    margin: 20px 0px;
+}
