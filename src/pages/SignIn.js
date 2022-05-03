@@ -10,7 +10,9 @@ const SignIn = () => {
         <form className="form">
           <input placeholder="username" className="form-input"/>
           <input placeholder="password" className="form-input"/>
-          <button className="form-button">LOGIN</button>
+          <Link to="/profile">
+            <button className="form-button">LOGIN</button>
+          </Link>
           <Link className="form-link" to="/register">CREATE A NEW ACCOUNT</Link>
         </form>
       </div>

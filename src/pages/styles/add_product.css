@@ -1,4 +1,4 @@
-.register-container{
+.add-container{
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -38,6 +38,7 @@
 }
 
 .form-button{
+    overflow: hidden;
     font-size: 15px;
     font-family: "Trebuchet MS", serif;
     width: 100%;
@@ -48,7 +49,20 @@
     cursor: pointer;
 }
 
-.form-agreement{
+.file {
+    font-family: "Roboto", sans-serif;
     font-size: 12px;
-    margin: 20px 0px;
+    position: relative;
+    overflow: hidden;
+    margin: 10px;
+    width: 100%;
+    border: none;
+    border-radius: 0;
+    background: #e1506bb8;
+}
+.file input {
+    position: absolute;
+    opacity: 0;
+    right: 0;
+    top: 0;
 }

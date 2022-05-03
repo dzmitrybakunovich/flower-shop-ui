@@ -12,7 +12,7 @@ import React from "react";
 
 const Product = () => {
   return (
-      <Link to="/product" className="product-link">
+      <Link to="/product">
           <div className="container-item">
               <div className="container-circle" />
               <img className="container-img" src={img} alt="img"/>

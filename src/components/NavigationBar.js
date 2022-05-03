@@ -1,8 +1,11 @@
 import React from "react";
 
 import {
-    PermIdentity
+    PermIdentity,
+    CameraAlt,
 } from "@material-ui/icons";
+
+
 
 import {Navbar, Nav} from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -27,6 +30,9 @@ const NavigationBar = () => {
                     </Nav.Link >
                     <Nav.Link>
                         <Link className="nav-link" to="/sign_in"><PermIdentity/></Link>
+                    </Nav.Link>
+                    <Nav.Link>
+                        <Link className="nav-link" to="/find_flower"><CameraAlt/></Link>
                     </Nav.Link>
                 </Nav>
             </Navbar.Collapse>

@@ -18,11 +18,15 @@
 }
 
 .container-info{
+    font-size: 15px;
+    font-family: "Roboto", sans-serif;
     flex: 1;
     padding: 0px 50px;
 }
 
 .title{
+    font-size: 25px;
+    font-family: "Trebuchet MS", serif;
     font-weight: 200;
 }
 
@@ -43,6 +47,8 @@
 }
 
 .button{
+    font-size: 15px;
+    font-family: "Trebuchet MS", serif;
     padding: 15px;
     background-color: #e1506b;
     color: white;

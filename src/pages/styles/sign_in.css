@@ -16,12 +16,15 @@
 }
 
 .title{
-    font-size: 24px;
+    font-size: 25px;
+    font-family: "Trebuchet MS", serif;
     font-weight: 300;
     width: 100%;
 }
 
 .form{
+    font-size: 15px;
+    font-family: "Roboto", sans-serif;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -44,7 +47,9 @@
 }
 
 .form-button{
-    width: 40%;
+    width: 100%;
+    font-size: 15px;
+    font-family: "Trebuchet MS", serif;
     border: none;
     padding: 15px;
     background-color: #e1506b;
