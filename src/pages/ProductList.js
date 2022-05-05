@@ -21,7 +21,8 @@ const ProductList = () => {
         <div className="filter">
           <span className="filter-title">Sort Flowers:</span>
           <select className="filter-select">
-            <option selected>Newest</option>
+            <option selected>Newest (asc)</option>
+            <option>Newest (desc)</option>
             <option>Price (asc)</option>
             <option>Price (desc)</option>
           </select>

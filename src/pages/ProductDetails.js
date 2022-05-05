@@ -1,7 +1,12 @@
 import img from "../assets/draft.jpg";
 import React from "react";
+import {
+  Favorite,
+    Edit
+} from "@material-ui/icons";
 
 import "./styles/product_detail.css";
+import {Link} from "react-router-dom";
 
 const ProductDetails = () => {
   return (
@@ -19,6 +24,22 @@ const ProductDetails = () => {
           <div className="contact">
             <button className="button">Contact seller</button>
           </div>
+          <div className="fav">
+            <p className="description">
+              Add to favorites
+            </p>
+            <div className="icon">
+              <Favorite />
+            </div>
+          </div>
+        </div>
+        <div className="edit">
+          <p className="description">
+            Edit info
+          </p>
+          <Link to="/edit_product" className="icon">
+            <Edit />
+          </Link>
         </div>
       </div>
     </div>

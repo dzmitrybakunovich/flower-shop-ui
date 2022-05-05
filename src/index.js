@@ -14,8 +14,9 @@ import React from "react";
 import ProductDetails from "./pages/ProductDetails";
 import Profile from "./pages/Profile";
 import AddProduct from "./pages/AddProduct";
-import Edit from "./pages/Edit";
+import EditProfile from "./pages/EditProfile";
 import FindFlower from "./pages/FindFlower";
+import EditProduct from "./pages/EditProduct";
 
 const rootElement = document.getElementById("root");
 render(
@@ -29,7 +30,8 @@ render(
             <Route exact path="product" element={<ProductDetails/>}/>
             <Route exact path="profile" element={<Profile/>}/>
             <Route exact path="add_product" element={<AddProduct/>}/>
-            <Route exact path="edit" element={<Edit/>}/>
+            <Route exact path="edit_profile" element={<EditProfile/>}/>
+            <Route exact path="edit_product" element={<EditProduct/>}/>
             <Route exact path="find_flower" element={<FindFlower/>}/>
         </Routes>
         <Footer/>

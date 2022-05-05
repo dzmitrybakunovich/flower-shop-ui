@@ -1,7 +1,7 @@
-import "../pages/styles/edit.css";
+import "./styles/edit_profile.css";
 import {Link} from "react-router-dom";
 
-const Edit = () => {
+const EditProfile = () => {
     return (
         <div className="edit-container">
             <div className="container-wrapper">
@@ -22,4 +22,4 @@ const Edit = () => {
     );
 };
 
-export default Edit;
+export default EditProfile;

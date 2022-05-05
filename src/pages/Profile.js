@@ -1,10 +1,13 @@
 import "../pages/styles/profile.css";
 
 import profile_pic from "../assets/user.png";
+
 import {Link} from "react-router-dom";
 
 
+
 const Profile = () => {
+
     return (
         <div className="container emp-profile">
             <form method="post">
@@ -14,7 +17,7 @@ const Profile = () => {
                             <img src={profile_pic} alt=""/>
                             <div className="file btn btn-lg btn-primary">
                                 Change Photo
-                                <input type="file" name="file"/>
+                                <input type="file" name="file" accept=".jpg,.jpeg,.png"/>
                             </div>
                         </div>
                     </div>
@@ -25,7 +28,7 @@ const Profile = () => {
                                     User name
                                 </h5>
                                 <div className="profile-buttons">
-                                    <Link to="/edit">
+                                    <Link to="/edit_profile">
                                     <button className="profile-edit-btn">Edit profile</button>
                                     </Link>
                                     <Link to="/add_product">
@@ -42,13 +45,17 @@ const Profile = () => {
                                     <a className="nav-link" id="profile-tab" data-toggle="tab"
                                        role="tab" aria-controls="products" aria-selected="false">Products</a>
                                 </li>
+                                <li className="nav-item">
+                                    <a className="nav-link" id="profile-tab" data-toggle="tab"
+                                       role="tab" aria-controls="products" aria-selected="false">Favorites</a>
+                                </li>
                             </ul>
                         </div>
                     </div>
                 </div>
                 <div className="row">
                     <div className="col-md-8">
-                        <div className="tab-content profile-tab" id="myTabContent">
+                        <div className="tab-content home-tab" id="myTabContent">
                             <div className="tab-pane fade show active" id="home" role="tabpanel"
                                  aria-labelledby="home-tab">
                                 <div className="row">

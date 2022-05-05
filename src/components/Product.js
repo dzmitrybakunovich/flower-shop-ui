@@ -1,5 +1,5 @@
 import {
-  FavoriteBorderOutlined,
+  Favorite,
 } from "@material-ui/icons";
 
 import {Link} from 'react-router-dom';
@@ -18,7 +18,7 @@ const Product = () => {
               <img className="container-img" src={img} alt="img"/>
               <div className="info">
                   <div className="info-icon">
-                      <FavoriteBorderOutlined />
+                      <Favorite />
                   </div>
               </div>
           </div>

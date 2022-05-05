@@ -8,7 +8,7 @@ const FindFlower = () => {
                 <h1 className="title">Find a flower by photo</h1>
                 <form className="form">
                     <div className="file btn btn-lg btn-primary">
-                        Add Photo<input type="file" name="file"/>
+                        Add Photo<input type="file" name="file" accept=".jpg,.jpeg,.png"/>
                     </div>
                     <Link to="/find_flower">
                         <button className="form-button">FIND</button>

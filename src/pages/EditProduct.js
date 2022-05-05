@@ -1,12 +1,12 @@
-import "../pages/styles/add_product.css";
+import "../pages/styles/edit_product.css";
 import {Link} from "react-router-dom";
 import React from "react";
 
-const AddProduct = () => {
+const EditProduct = () => {
     return (
-        <div className="add-container">
+        <div className="edit-container">
             <div className="container-wrapper">
-                <h1 className="title">ADD A PRODUCT</h1>
+                <h1 className="title">EDIT A PRODUCT INFO</h1>
                 <form className="form">
                     <input placeholder="title" className="form-input"/>
                     <div className="filter">
@@ -20,10 +20,10 @@ const AddProduct = () => {
                     <input placeholder="description" className="form-input"/>
                     <input placeholder="price" className="form-input"/>
                     <div className="file btn btn-lg btn-primary">
-                       Add Photo<input type="file" name="file" accept=".jpg,.jpeg,.png"/>
+                        Change photo<input type="file" name="file" accept=".jpg,.jpeg,.png"/>
                     </div>
-                    <Link to="/profile">
-                        <button className="form-button">ADD</button>
+                    <Link to="/product">
+                        <button className="form-button">EDIT</button>
                     </Link>
                 </form>
             </div>
@@ -31,4 +31,4 @@ const AddProduct = () => {
     );
 };
 
-export default AddProduct;
+export default EditProduct;

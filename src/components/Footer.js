@@ -9,6 +9,11 @@ import {
 } from "@material-ui/icons";
 import "../components/styles/footer.css";
 
+
+
+
+import {Link} from "react-router-dom";
+
 const Footer = () => {
   return (
     <div className="footer-container">
@@ -31,10 +36,9 @@ const Footer = () => {
       <div className="container-center">
         <h3 className="container-title">Useful Links</h3>
         <ul className="links-list">
-          <li className="list-item">Home</li>
-          <li className="list-item">My Account</li>
-          <li className="list-item">Wishlist</li>
-          <li className="list-item">Find a flower by photo</li>
+          <Link to="/" className="list-item">Home</Link>
+          <Link to="/flowers" className="list-item">Shop</Link>
+          <Link to="/find_flower" className="list-item">Find a flower by photo</Link>
         </ul>
       </div>
       <div className="container-right">
