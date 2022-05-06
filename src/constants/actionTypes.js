@@ -1,0 +1,3 @@
+export const AUTHENTICATION_SUCCESS = "AUTHENTICATION_SUCCESS";
+export const LOGOUT = "LOGOUT";
+export const SET_USER = "SET_USER";
