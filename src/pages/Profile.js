@@ -4,8 +4,6 @@ import profile_pic from "../assets/user.png";
 
 import {Link} from "react-router-dom";
 
-
-
 const Profile = () => {
 
     return (
