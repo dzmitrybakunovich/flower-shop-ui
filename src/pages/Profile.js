@@ -96,7 +96,7 @@ const Profile = () => {
                     <label>User Name</label>
                   </div>
                   <div className="col-md-6">
-                    <p>Username</p>
+                    <p>{user.userName}</p>
                   </div>
                 </div>
                 <div className="row">
@@ -121,14 +121,6 @@ const Profile = () => {
                   </div>
                   <div className="col-md-6">
                     <p>{user.email}</p>
-                  </div>
-                </div>
-                <div className="row">
-                  <div className="col-md-6">
-                    <label>Phone</label>
-                  </div>
-                  <div className="col-md-6">
-                    <p>123 456 7890</p>
                   </div>
                 </div>
               </div>

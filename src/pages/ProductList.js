@@ -28,7 +28,7 @@ const ProductList = () => {
           </select>
         </div>
       </div>
-      <Products />
+      <Products itemsPerPage={10}/>
     </div>
   );
 };
