@@ -8,7 +8,7 @@ import React, { useEffect, useState } from 'react';
 import ReactPaginate from 'react-paginate';
 
 
-function PaginatedItems({ itemsPerPage }) {
+function PaginatedItems({ itemsPerPage, products }) {
   const [currentItems, setCurrentItems] = useState(null);
   const [pageCount, setPageCount] = useState(0);
   const [itemOffset, setItemOffset] = useState(0);
@@ -16,12 +16,12 @@ function PaginatedItems({ itemsPerPage }) {
   useEffect(() => {
     const endOffset = itemOffset + itemsPerPage;
     console.log(`Loading items from ${itemOffset} to ${endOffset}`);
-    setCurrentItems(popularProducts.slice(itemOffset, endOffset));
-    setPageCount(Math.ceil(popularProducts.length / itemsPerPage));
+    setCurrentItems(products.slice(itemOffset, endOffset));
+    setPageCount(Math.ceil(products.length / itemsPerPage));
   }, [itemOffset, itemsPerPage]);
 
   const handlePageClick = (event) => {
-    const newOffset = (event.selected * itemsPerPage) % popularProducts.length;
+    const newOffset = (event.selected * itemsPerPage) % products.length;
     console.log(
         `User requested page number ${event.selected}, which is offset ${newOffset}`
     );

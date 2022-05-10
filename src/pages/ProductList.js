@@ -1,9 +1,29 @@
 import Products from "../components/Products";
 
 import "../pages/styles/product_list.css";
-import React from "react";
+import React, {useState} from "react";
+import axios from "axios";
 
 const ProductList = () => {
+
+  const handleSubmit = async (e) => {
+    e.preventDefault()
+    axios.get(
+        'http://127.0.0.1:8080/api/item'
+    ).then(response => {
+          if (response.status === 201) {
+            getData();
+          }
+        }
+    )
+  }
+
+  const [data, setDataStatus] = useState(false);
+
+  const getData = () => {
+    setDataStatus(!data);
+  };
+
   return (
     <div className="list-container">
       <div className="filter-container">
@@ -27,8 +47,11 @@ const ProductList = () => {
             <option>Price (desc)</option>
           </select>
         </div>
+        <form onSubmit={handleSubmit}>
+          <button className="form-button" type="submit">LOGIN</button>
+        </form>
       </div>
-      <Products itemsPerPage={10}/>
+      <Products itemsPerPage={10} products={}/>
     </div>
   );
 };
