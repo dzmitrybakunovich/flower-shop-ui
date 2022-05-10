@@ -19,7 +19,7 @@ const Profile = () => {
   useEffect(() => {
       if (isLoading)
         axios.get(
-          'http://0.0.0.0:8000/api/v1/users/current/',
+          'http://127.0.0.1:8000/api/v1/users/current/',
           {
             headers: {
               'Authorization': `Bearer ${token}`

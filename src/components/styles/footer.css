@@ -26,6 +26,16 @@
     justify-content: center;
     margin-right: 20px;
     cursor: pointer;
+    text-decoration: none;
+}
+
+.social-icon-link{
+    margin-top: -2px;
+    color: white;
+}
+
+.social-icon-link:hover{
+    color: white;
 }
 
 .container-center{

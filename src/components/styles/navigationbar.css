@@ -25,3 +25,12 @@
     margin: 0 20px;
     text-decoration: none;
 }
+
+.navbar-light:hover .navbar-nav:hover .nav-link:hover{
+    color: #e1506b;
+}
+
+.navbar-light:current .navbar-nav:current .nav-link:current{
+    color: #e1506b;
+}
+

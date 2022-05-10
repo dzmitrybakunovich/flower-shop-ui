@@ -7,6 +7,10 @@ import React, {useState} from "react";
 import axios from "axios";
 import {useDispatch} from "react-redux";
 import {actionCreator} from "../store/actions";
+import {
+  VisibilityOutlined,
+    VisibilityOffOutlined
+} from "@material-ui/icons";
 
 
 const SignIn = () => {
@@ -22,7 +26,7 @@ const SignIn = () => {
     e.preventDefault()
     console.log(username, password)
     axios.post(
-      'http://0.0.0.0:8000/api/v1/users/auth/jwt-token/', {
+      'http://127.0.0.1:8000/api/v1/users/auth/jwt-token/', {
         username: username,
         password: password
       }
@@ -40,6 +44,12 @@ const SignIn = () => {
     )
   }
 
+  const [passwordShown, setPasswordShown] = useState(false);
+
+  const togglePassword = () => {
+    setPasswordShown(!passwordShown);
+  };
+
   return (
     <div className="signin-container">
       <div className="container-wrapper">
@@ -47,18 +57,19 @@ const SignIn = () => {
         {error}
         <form className="form" onSubmit={handleSubmit}>
           <input
+              type="email"
             placeholder="username"
             className="form-input"
             onChange={e => setUsername(e.target.value)}
           />
           <input
+              type={passwordShown ? "text" : "password"}
             placeholder="password"
             className="form-input"
             onChange={e => setPassword(e.target.value)}
           />
-          {/*<Link to="/profile">*/}
+          <button className="visibility-button" onClick={togglePassword}>{passwordShown ? <VisibilityOutlined/> : <VisibilityOffOutlined/>}</button>
           <button className="form-button" type="submit">LOGIN</button>
-          {/*</Link>*/}
           <Link className="form-link" to="/register">CREATE A NEW ACCOUNT</Link>
         </form>
       </div>

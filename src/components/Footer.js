@@ -9,9 +9,6 @@ import {
 } from "@material-ui/icons";
 import "../components/styles/footer.css";
 
-
-
-
 import {Link} from "react-router-dom";
 
 const Footer = () => {
@@ -20,16 +17,24 @@ const Footer = () => {
       <div className="container-left">
         <div className="container-social">
           <div className="social-icon" color="3B5999">
-            <Facebook />
+            <a className="social-icon-link" href="https://www.facebook.com/BlossomFlowerShops/">
+              <Facebook />
+            </a>
           </div>
           <div className="social-icon" color="E4405F">
-            <Instagram />
+            <a className="social-icon-link" href="https://www.instagram.com/accounts/login/?next=/hattieflower/">
+              <Instagram />
+            </a>
           </div>
           <div className="social-icon" color="55ACEE">
-            <Twitter />
+            <a className="social-icon-link" href="https://twitter.com/blossomflwrshop">
+              <Twitter />
+            </a>
           </div>
           <div className="social-icon" color="E60023">
-            <Pinterest />
+            <a className="social-icon-link" href="https://www.pinterest.com/FlowersGardenn/_created/">
+              <Pinterest />
+            </a>
           </div>
         </div>
       </div>
