@@ -1,0 +1,61 @@
+.register-container{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.container-wrapper{
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+    padding: 20px;
+    background-color: white;
+    text-align: center;
+}
+
+.visibility-button {
+    height: 50px;
+    margin-top: 20px;
+    margin-right: 15px;
+    margin-left: -8px;
+}
+
+.title{
+    font-size: 25px;
+    font-family: "Trebuchet MS", serif;
+    font-weight: 300;
+    width: 100%;
+}
+
+.form{
+    display: flex;
+    flex-wrap: wrap;
+    font-size: 15px;
+    font-family: "Roboto", sans-serif;
+    justify-content: center;
+}
+
+.form-input{
+    flex: 1;
+    min-width: 40%;
+    margin: 20px 10px 0px 0px;
+    padding: 10px;
+}
+
+.form-button{
+    font-size: 15px;
+    font-family: "Trebuchet MS", serif;
+    width: 100%;
+    border: none;
+    padding: 15px 20px;
+    background-color: #e1506b;
+    color: white;
+    cursor: pointer;
+}
+
+.form-agreement{
+    font-size: 12px;
+    margin: 20px 0px;
+}

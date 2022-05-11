@@ -1,0 +1,25 @@
+.products-container{
+    padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.pagination{
+    flex-direction: row;
+    display: flex;
+    justify-content: center;
+}
+
+.pagination-link{
+    margin: 0 10px ;
+    text-decoration: none;
+    text-transform: none;
+    cursor: pointer;
+    color: #5f5354;
+}
+
+.pagination-link-active{
+    color: #e1506b;
+}

@@ -1,0 +1,36 @@
+.header-title{
+    font-size: 30px;
+    font-family: "Trebuchet MS", sans-serif;
+    text-transform: uppercase;
+    margin-left: 20px;
+    color: #5f5354;
+}
+
+.header-title-word{
+    color: #e1506b;
+}
+
+.navigation {
+    font-family: "Trebuchet MS", sans-serif;
+    font-size: 20px;
+    color: #263A41;
+    text-transform: uppercase;
+    flex: fit-content;
+    justify-content: right;
+}
+
+.nav-link {
+    display: inline-block;
+    vertical-align: top;
+    margin: 0 20px;
+    text-decoration: none;
+}
+
+.navbar-light:hover .navbar-nav:hover .nav-link:hover{
+    color: #e1506b;
+}
+
+.navbar-light:current .navbar-nav:current .nav-link:current{
+    color: #e1506b;
+}
+
