@@ -11,16 +11,16 @@ import React, {useEffect, useState} from "react";
 import {useParams} from "react-router-dom";
 
 const Profile = () => {
-  let { uuid } = useParams();
+  let {uuid} = useParams();
   const dispatch = useDispatch();
 
   const token = useSelector((state) => state.authReducer.token)
-  const user = useSelector((state) => state.authReducer.user)
+  const [user, setUser] = useState([])
   const [isLoading, setIsLoading] = useState(true)
+  const [selectedFile, setSelectedFile] = React.useState(null);
 
   useEffect(() => {
       if (isLoading)
-        console.log(token)
         axios.get(
           `http://127.0.0.1:8000/api/v1/users/${uuid}/`,
           {
@@ -29,7 +29,13 @@ const Profile = () => {
             },
           }
         ).then(response => {
+            if (localStorage.getItem('user')) {
+              setUser(response.data)
+              setIsLoading(false)
+              return
+            }
             localStorage.setItem('user', JSON.stringify(response.data));
+            setUser(response.data)
             dispatch(
               actionCreator.setUser(response.data)
             )
@@ -40,6 +46,25 @@ const Profile = () => {
     }, []
   )
 
+
+  const handleFileSelect = (event) => {
+    event.preventDefault()
+    axios.put(
+      `http://127.0.0.1:8000/api/v1/users/${uuid}/update/`, {
+        photo: event.target.files[0],
+      }, {
+
+        headers: {
+          "Content-Type": "multipart/form-data",
+          'Authorization': `Bearer ${token}`,
+        },
+      }
+    ).then(response => {
+        console.log('true')
+      }
+    )
+  }
+
   if (isLoading)
     return 'Loading...'
 
@@ -49,27 +74,27 @@ const Profile = () => {
         <div className="row">
           <div className="col-md-4">
             <div className="profile-img">
-              <img src={profile_pic} alt=""/>
+              <img src={user.photo ? user.photo : profile_pic} alt=""/>
+              {JSON.parse(localStorage.getItem('user')).uuid === user.uuid &&
               <div className="file btn btn-lg btn-primary">
                 Change Photo
-                <input type="file" name="file" accept=".jpg,.jpeg,.png"/>
-              </div>
+                <input type="file" name="file" accept=".jpg,.jpeg,.png"
+                       onChange={handleFileSelect}/>
+              </div>}
             </div>
           </div>
           <div className="col-md-6">
             <div className="profile-head">
               <div className="profile-head-row">
-                <h5>
-                  User name
-                </h5>
+                {JSON.parse(localStorage.getItem('user')).uuid === user.uuid &&
                 <div className="profile-buttons">
-                  <Link to="/edit_profile">
+                  <Link to={`/edit_profile/${user.uuid}`}>
                     <button className="profile-edit-btn">Edit profile</button>
                   </Link>
                   <Link to="/add_product">
                     <button className="profile-edit-btn">Add product</button>
                   </Link>
-                </div>
+                </div>}
               </div>
               <ul className="nav nav-tabs" id="myTab" role="tablist">
                 <li className="nav-item">
@@ -98,7 +123,7 @@ const Profile = () => {
                     <label>User Name</label>
                   </div>
                   <div className="col-md-6">
-                    <p>{user.userName}</p>
+                    <p>{user.username}</p>
                   </div>
                 </div>
                 <div className="row">
