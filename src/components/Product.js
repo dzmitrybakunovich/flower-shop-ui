@@ -10,12 +10,12 @@ import "../components/styles/product.css";
 import React from "react";
 
 
-const Product = () => {
+const Product = ({item}) => {
   return (
       <Link to="/product">
           <div className="container-item">
               <div className="container-circle" />
-              <img className="container-img" src={img} alt="img"/>
+              <img className="container-img" src={item.it_img} alt="img"/>
               <div className="info">
                   <div className="info-icon">
                       <Favorite />

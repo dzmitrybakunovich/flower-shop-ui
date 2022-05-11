@@ -8,8 +8,10 @@ import axios from "axios";
 import {actionCreator} from "../store/actions";
 import {useDispatch} from "react-redux";
 import React, {useEffect, useState} from "react";
+import {useParams} from "react-router-dom";
 
 const Profile = () => {
+  let { uuid } = useParams();
   const dispatch = useDispatch();
 
   const token = useSelector((state) => state.authReducer.token)
@@ -18,15 +20,15 @@ const Profile = () => {
 
   useEffect(() => {
       if (isLoading)
+        console.log(token)
         axios.get(
-          'http://127.0.0.1:8000/api/v1/users/current/',
+          `http://127.0.0.1:8000/api/v1/users/${uuid}/`,
           {
             headers: {
               'Authorization': `Bearer ${token}`
             },
           }
         ).then(response => {
-            console.log(response.data)
             localStorage.setItem('user', JSON.stringify(response.data));
             dispatch(
               actionCreator.setUser(response.data)

@@ -10,8 +10,12 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import '../components/styles/navigationbar.css';
 
 import {Link} from 'react-router-dom';
+import {useSelector} from "react-redux";
 
 const NavigationBar = () => {
+    const isAuthenticated = useSelector((state) => state.authReducer.isAuthenticated)
+    const user = useSelector((state) => state.authReducer.user)
+
     return (
         <Navbar collapseOnSelect expand="lg">
             <Navbar.Brand className="header-title">
@@ -27,7 +31,7 @@ const NavigationBar = () => {
                         <Link className="nav-link" to="/flowers">Flowers&Plants</Link>
                     </Nav.Link >
                     <Nav.Link>
-                        <Link className="nav-link" to="/sign_in"><PermIdentity/></Link>
+                        <Link className="nav-link" to={user ? `/profile/${user.uuid}` : "/sign_in"}><PermIdentity/></Link>
                     </Nav.Link>
                     <Nav.Link>
                         <Link className="nav-link" to="/find_flower"><CameraAlt/></Link>

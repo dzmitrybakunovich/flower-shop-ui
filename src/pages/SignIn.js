@@ -7,9 +7,10 @@ import React, {useState} from "react";
 import axios from "axios";
 import {useDispatch} from "react-redux";
 import {actionCreator} from "../store/actions";
+import jwt_decode from 'jwt-decode';
 import {
   VisibilityOutlined,
-    VisibilityOffOutlined
+  VisibilityOffOutlined
 } from "@material-ui/icons";
 
 
@@ -24,7 +25,6 @@ const SignIn = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault()
-    console.log(username, password)
     axios.post(
       'http://127.0.0.1:8000/api/v1/users/auth/jwt-token/', {
         username: username,
@@ -33,15 +33,16 @@ const SignIn = () => {
     ).then(response => {
         if (response.status === 200) {
           setError('')
-          const token = response.data.access
+          const token = response.data.access;
+          const decoded = jwt_decode(token);
           localStorage.setItem('token', token);
           dispatch(
             actionCreator.authenticateSuccess(token)
           )
-          navigate('/profile');
+          navigate(`/profile/${decoded.user_uuid}`);
         }
       }
-    )
+    ).catch(reason => setError('The username or password is incorrect'))
   }
 
   const [passwordShown, setPasswordShown] = useState(false);
@@ -54,21 +55,22 @@ const SignIn = () => {
     <div className="signin-container">
       <div className="container-wrapper">
         <h1 className="title">SIGN IN</h1>
-        {error}
+        <div className="error">{error}</div>
         <form className="form" onSubmit={handleSubmit}>
           <input
-              type="email"
+            type="text"
             placeholder="username"
             className="form-input"
             onChange={e => setUsername(e.target.value)}
           />
           <input
-              type={passwordShown ? "text" : "password"}
+            type={passwordShown ? "text" : "password"}
             placeholder="password"
             className="form-input"
             onChange={e => setPassword(e.target.value)}
           />
-          <button className="visibility-button" onClick={togglePassword}>{passwordShown ? <VisibilityOutlined/> : <VisibilityOffOutlined/>}</button>
+          <button className="visibility-button" onClick={togglePassword}>{passwordShown ?
+            <VisibilityOutlined/> : <VisibilityOffOutlined/>}</button>
           <button className="form-button" type="submit">LOGIN</button>
           <Link className="form-link" to="/register">CREATE A NEW ACCOUNT</Link>
         </form>

@@ -14,16 +14,16 @@ import React from "react";
 import {useSelector} from "react-redux";
 
 export default function App() {
-  const isAuthenticated = useSelector((state) => state.authReducer.isAuthenticated)
+  const user = useSelector((state) => state.authReducer.user)
 
   return (
     <Routes>
       <Route exact path="/" element={<Home/>}/>
-      <Route exact path="sign_in" element={<SignIn/>}/>
+      {!user && <Route exact path="sign_in" element={<SignIn/>}/>}
+      {!user && <Route exact path="register" element={<Register/>}/>}
       <Route exact path="flowers" element={<ProductList/>}/>
-      <Route exact path="register" element={<Register/>}/>
       <Route exact path="product" element={<ProductDetails/>}/>
-      <Route exact path="profile" element={<Profile/>}/>
+      <Route exact path="profile/:uuid" element={<Profile/>}/>
       <Route exact path="add_product" element={<AddProduct/>}/>
       <Route exact path="edit_profile" element={<EditProfile/>}/>
       <Route exact path="edit_product" element={<EditProduct/>}/>
