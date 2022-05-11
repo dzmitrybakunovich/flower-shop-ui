@@ -25,7 +25,7 @@ export default function App() {
       <Route exact path="product" element={<ProductDetails/>}/>
       <Route exact path="profile/:uuid" element={<Profile/>}/>
       <Route exact path="add_product" element={<AddProduct/>}/>
-      <Route exact path="edit_profile" element={<EditProfile/>}/>
+      <Route exact path="edit_profile/:uuid" element={<EditProfile/>}/>
       <Route exact path="edit_product" element={<EditProduct/>}/>
       <Route exact path="find_flower" element={<FindFlower/>}/>
     </Routes>
