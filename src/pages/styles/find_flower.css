@@ -33,7 +33,7 @@
 .form-input{
     flex: 1;
     min-width: 40%;
-    margin: 20px 10px 0px 0px;
+    margin: 10px 10px 0px 0px;
     padding: 10px;
 }
 
@@ -41,12 +41,13 @@
     overflow: hidden;
     font-size: 15px;
     font-family: "Trebuchet MS", serif;
-    width: 100%;
+    width: 50%;
     border: none;
     padding: 15px 20px;
     background-color: #e1506b;
     color: white;
     cursor: pointer;
+    margin-left: 9%;
 }
 
 .file {
@@ -65,4 +66,21 @@
     opacity: 0;
     right: 0;
     top: 0;
+}
+
+.container_image{
+    width:250px
+}
+
+.icon1 {
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    position: center;
+    width: 70%;
+    height: 75%;
+}
+.poojaD {
+    display: inline-flex;
+    margin-left: -7%;
+    position:relative
 }
