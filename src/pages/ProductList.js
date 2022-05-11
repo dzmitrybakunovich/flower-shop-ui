@@ -48,7 +48,7 @@ const ProductList = () => {
               <option disabled selected>
                 Category
               </option>
-              {categories.map((item) => (<option value={item.ca_name}>{item.ca_name}</option>))}
+              {categories.map((item) => (<option key={item.ca_id} value={item.ca_name}>{item.ca_name}</option>))}
             </select>
           </div>
           <div className="filter">
